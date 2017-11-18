@@ -17,7 +17,7 @@ db.once('open', () => {
 const eventSchema = mongoose.Schema({
   name: String,
   type: String,
-  votes: Number,
+  votes: { type: Number, default: 0 },
 });
 
 const daySchema = mongoose.Schema({
