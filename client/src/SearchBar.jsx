@@ -1,10 +1,10 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-const SearchBar = props => (
+const SearchBar = ({ onSubmit, handleLoc, handleCat }) => (
   <div className="searchBar">
-    <input />
-    <button className="searchSubmit" onClick={props.onSubmit}>Search</button>
+    <input onChange={e => handleLoc(e)} />
+    <button className="searchSubmit" onClick={onSubmit}>Search</button>
   </div>
 );
 

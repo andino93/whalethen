@@ -71,7 +71,7 @@ class App extends React.Component {
       event,
       timelineId: this.state.timelineId,
       day,
-      timelineName: 'test',
+      timelineName: this.state.timelineName,
     })
       .then(() => this.getTrip())
       .catch(err => console.error('add event error: ', err))

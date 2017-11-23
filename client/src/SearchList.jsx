@@ -12,6 +12,7 @@ const SearchList = (props) => {
     onDaySelect,
     selectedDay,
   } = props;
+
   return (
     <div className="searchList">
       {_.map(searchList, (event, index) => (

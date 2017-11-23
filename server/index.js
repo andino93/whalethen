@@ -49,6 +49,7 @@ app.delete('/entry/:id', (request, response) => {
 
 app.get('/search', (request, response) => {
   const { category, location } = request.query;
+  console.log(request.query)
   // for triggering a search to the search api
   api.placesApi(location, category)
     .then(result => response.json(result))

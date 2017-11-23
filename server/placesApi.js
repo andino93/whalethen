@@ -44,6 +44,7 @@ const placesApi = (location, query, distance = 32000) => {
   return getCoordinates(location)
     .then(results => formatCoordinates(results))
     .then((formatedCoors) => { options.qs.location = formatedCoors; })
+    .tap(() => console.log('optionssssss', options))
     .then(() => request(options))
     .then(response => formatPlaces(response))
     .catch(err => console.error(err));
@@ -69,6 +70,3 @@ module.exports.getCoordinates = getCoordinates;
 // placesApi('mountain view', 'hiking')
 //   .then(result => console.log('success: ', result))
 //   .catch(err => console.error('fail: ', err));
-
-
-
