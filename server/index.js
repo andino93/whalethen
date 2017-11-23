@@ -24,7 +24,7 @@ app.get('/timeline/:timelineName/:timelineId', (request, response) => {
 });
 
 app.post('/timeline', ({ body }, response) => {
-  db.addNewTimeline(body.timelineId, body.numberOfDays)
+  db.addNewTimeline(body.timelineId, body.numberOfDays, body.timelineName)
     .then(() => response.sendStatus(200))
     .tapCatch(err => console.error(err))
     .catch(() => response.sendStatus(409));

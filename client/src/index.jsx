@@ -49,6 +49,11 @@ class App extends React.Component {
   onSubmit() {
     this.setState({ timelineId: shortid.generate() });
     this.countDays();
+    axios.post('/timeline', {
+      timelineId: this.state.timelineId,
+      numberOfDays: this.state.numberOfDays,
+      timelineName: this.state.timelineName,
+    });
   }
 
   onEnter(event) {
@@ -118,7 +123,7 @@ class App extends React.Component {
   countDays() {
     const start = moment(this.state.startDate);
     const end = moment(this.state.endDate);
-    this.setState({ numberOfDays: end.diff(start, 'days') });
+    this.setState({ numberOfDays: end.diff(start, 'days'), timelineData: [] });
   }
 
   render() {
